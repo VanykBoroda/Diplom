@@ -82,5 +82,425 @@
             "target_column": "dropout",
             "hyperparameter_tuning": false
         }
+    },
+    {
+        "timestamp": "2025-05-16T08:04:49.204833",
+        "model_version": "random_forest",
+        "metrics": {
+            "accuracy": 0.915,
+            "precision": 0.9468085106382979,
+            "recall": 0.8811881188118812,
+            "f1": 0.9128205128205128,
+            "confusion_matrix": [
+                [
+                    94,
+                    5
+                ],
+                [
+                    12,
+                    89
+                ]
+            ],
+            "roc_auc": 0.9814481448144814,
+            "cv_accuracy_mean": 0.907,
+            "cv_accuracy_std": 0.017204650534085267
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": false
+        }
+    },
+    {
+        "timestamp": "2025-06-11T08:02:03.831971",
+        "model_version": "knn",
+        "metrics": {
+            "accuracy": 0.775,
+            "precision": 0.8333333333333334,
+            "recall": 0.693069306930693,
+            "f1": 0.7567567567567568,
+            "confusion_matrix": [
+                [
+                    85,
+                    14
+                ],
+                [
+                    31,
+                    70
+                ]
+            ],
+            "roc_auc": 0.8401340134013402,
+            "cv_accuracy_mean": 0.786,
+            "cv_accuracy_std": 0.02817800560721074
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": false
+        }
+    },
+    {
+        "timestamp": "2025-06-20T01:49:42.933148",
+        "model_version": "random_forest",
+        "metrics": {
+            "accuracy": 0.935,
+            "precision": 0.9782608695652174,
+            "recall": 0.8910891089108911,
+            "f1": 0.9326424870466321,
+            "confusion_matrix": [
+                [
+                    97,
+                    2
+                ],
+                [
+                    11,
+                    90
+                ]
+            ],
+            "roc_auc": 0.9841984198419842,
+            "cv_accuracy_mean": 0.916,
+            "cv_accuracy_std": 0.017999999999999988
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": false
+        }
+    },
+    {
+        "timestamp": "2025-06-20T02:15:01.393845",
+        "model_version": "random_forest",
+        "metrics": {
+            "accuracy": 0.9560283687943263,
+            "precision": 0.9763313609467456,
+            "recall": 0.9348441926345609,
+            "f1": 0.9551374819102749,
+            "confusion_matrix": [
+                [
+                    344,
+                    8
+                ],
+                [
+                    23,
+                    330
+                ]
+            ],
+            "roc_auc": 0.9912197398918362,
+            "cv_accuracy_mean": 0.9540296582849773,
+            "cv_accuracy_std": 0.0029183540920506143
+        },
+        "dataset_info": {
+            "size": 3524,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
+    },
+    {
+        "timestamp": "2025-06-20T02:22:06.573182",
+        "model_version": "random_forest",
+        "metrics": {
+            "accuracy": 0.950354609929078,
+            "precision": 0.9732142857142857,
+            "recall": 0.9263456090651558,
+            "f1": 0.9492017416545718,
+            "confusion_matrix": [
+                [
+                    343,
+                    9
+                ],
+                [
+                    26,
+                    327
+                ]
+            ],
+            "roc_auc": 0.9899803631212979,
+            "cv_accuracy_mean": 0.9503409090909092,
+            "cv_accuracy_std": 0.0042979086229141894
+        },
+        "dataset_info": {
+            "size": 3524,
+            "target_column": "dropout",
+            "hyperparameter_tuning": false
+        }
+    },
+    {
+        "timestamp": "2025-06-20T02:23:57.251404",
+        "model_version": "random_forest",
+        "metrics": {
+            "accuracy": 0.950354609929078,
+            "precision": 0.9732142857142857,
+            "recall": 0.9263456090651558,
+            "f1": 0.9492017416545718,
+            "confusion_matrix": [
+                [
+                    343,
+                    9
+                ],
+                [
+                    26,
+                    327
+                ]
+            ],
+            "roc_auc": 0.9899803631212979,
+            "cv_accuracy_mean": 0.9503409090909092,
+            "cv_accuracy_std": 0.0042979086229141894
+        },
+        "dataset_info": {
+            "size": 3524,
+            "target_column": "dropout",
+            "hyperparameter_tuning": false
+        }
+    },
+    {
+        "timestamp": "2025-06-20T03:10:32.369645",
+        "model_version": "gradient_boosting",
+        "metrics": {
+            "accuracy": 0.95,
+            "precision": 0.9504950495049505,
+            "recall": 0.9504950495049505,
+            "f1": 0.9504950495049505,
+            "confusion_matrix": [
+                [
+                    94,
+                    5
+                ],
+                [
+                    5,
+                    96
+                ]
+            ],
+            "roc_auc": 0.9844984498449845,
+            "cv_accuracy_mean": 0.9349999999999999,
+            "cv_accuracy_std": 0.012649110640673476
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
+    },
+    {
+        "timestamp": "2025-06-20T03:10:38.887260",
+        "model_version": "logistic_regression",
+        "metrics": {
+            "accuracy": 0.83,
+            "precision": 0.8526315789473684,
+            "recall": 0.801980198019802,
+            "f1": 0.826530612244898,
+            "confusion_matrix": [
+                [
+                    85,
+                    14
+                ],
+                [
+                    20,
+                    81
+                ]
+            ],
+            "roc_auc": 0.9168916891689168,
+            "cv_accuracy_mean": 0.807,
+            "cv_accuracy_std": 0.017776388834631153
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
+    },
+    {
+        "timestamp": "2025-06-20T03:10:51.322566",
+        "model_version": "adaboost",
+        "metrics": {
+            "accuracy": 0.91,
+            "precision": 0.9368421052631579,
+            "recall": 0.8811881188118812,
+            "f1": 0.9081632653061225,
+            "confusion_matrix": [
+                [
+                    93,
+                    6
+                ],
+                [
+                    12,
+                    89
+                ]
+            ],
+            "roc_auc": 0.9657965796579657,
+            "cv_accuracy_mean": 0.8949999999999999,
+            "cv_accuracy_std": 0.02280350850198278
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
+    },
+    {
+        "timestamp": "2025-06-20T03:10:55.501926",
+        "model_version": "svm",
+        "metrics": {
+            "accuracy": 0.88,
+            "precision": 0.8737864077669902,
+            "recall": 0.8910891089108911,
+            "f1": 0.8823529411764706,
+            "confusion_matrix": [
+                [
+                    86,
+                    13
+                ],
+                [
+                    11,
+                    90
+                ]
+            ],
+            "roc_auc": 0.9604960496049605,
+            "cv_accuracy_mean": 0.89,
+            "cv_accuracy_std": 0.012247448713915901
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
+    },
+    {
+        "timestamp": "2025-06-20T03:11:00.806778",
+        "model_version": "decision_tree",
+        "metrics": {
+            "accuracy": 0.89,
+            "precision": 0.9340659340659341,
+            "recall": 0.8415841584158416,
+            "f1": 0.8854166666666666,
+            "confusion_matrix": [
+                [
+                    93,
+                    6
+                ],
+                [
+                    16,
+                    85
+                ]
+            ],
+            "roc_auc": 0.8904890489048904,
+            "cv_accuracy_mean": 0.9,
+            "cv_accuracy_std": 0.010954451150103333
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
+    },
+    {
+        "timestamp": "2025-06-20T03:11:02.713616",
+        "model_version": "decision_tree",
+        "metrics": {
+            "accuracy": 0.89,
+            "precision": 0.9340659340659341,
+            "recall": 0.8415841584158416,
+            "f1": 0.8854166666666666,
+            "confusion_matrix": [
+                [
+                    93,
+                    6
+                ],
+                [
+                    16,
+                    85
+                ]
+            ],
+            "roc_auc": 0.8904890489048904,
+            "cv_accuracy_mean": 0.9,
+            "cv_accuracy_std": 0.010954451150103333
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
+    },
+    {
+        "timestamp": "2025-06-20T03:11:03.571244",
+        "model_version": "decision_tree",
+        "metrics": {
+            "accuracy": 0.89,
+            "precision": 0.9340659340659341,
+            "recall": 0.8415841584158416,
+            "f1": 0.8854166666666666,
+            "confusion_matrix": [
+                [
+                    93,
+                    6
+                ],
+                [
+                    16,
+                    85
+                ]
+            ],
+            "roc_auc": 0.8904890489048904,
+            "cv_accuracy_mean": 0.9,
+            "cv_accuracy_std": 0.010954451150103333
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
+    },
+    {
+        "timestamp": "2025-06-20T03:11:23.072859",
+        "model_version": "neural_network",
+        "metrics": {
+            "accuracy": 0.885,
+            "precision": 0.90625,
+            "recall": 0.8613861386138614,
+            "f1": 0.883248730964467,
+            "confusion_matrix": [
+                [
+                    90,
+                    9
+                ],
+                [
+                    14,
+                    87
+                ]
+            ],
+            "roc_auc": 0.9598959895989599,
+            "cv_accuracy_mean": 0.8779999999999999,
+            "cv_accuracy_std": 0.023366642891095867
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
+    },
+    {
+        "timestamp": "2025-06-20T03:11:43.983605",
+        "model_version": "stacking",
+        "metrics": {
+            "accuracy": 0.945,
+            "precision": 0.9591836734693877,
+            "recall": 0.9306930693069307,
+            "f1": 0.9447236180904522,
+            "confusion_matrix": [
+                [
+                    95,
+                    4
+                ],
+                [
+                    7,
+                    94
+                ]
+            ],
+            "roc_auc": 0.9854985498549854,
+            "cv_accuracy_mean": 0.9200000000000002,
+            "cv_accuracy_std": 0.015165750888103078
+        },
+        "dataset_info": {
+            "size": 1000,
+            "target_column": "dropout",
+            "hyperparameter_tuning": true
+        }
     }
 ]

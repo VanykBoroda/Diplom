@@ -4,14 +4,19 @@ import os
 import joblib
 import logging
 import time
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import ConfusionMatrixDisplay, roc_curve, auc, accuracy_score
+from sklearn.model_selection import cross_val_score
+import numpy as np
 from typing import Dict, List, Any, Optional, Tuple, Union
 from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
 from sklearn.metrics import (
-    accuracy_score, precision_score, recall_score, f1_score, 
+    accuracy_score, precision_score, recall_score, f1_score,
     roc_auc_score, confusion_matrix, classification_report
 )
 from sklearn.ensemble import (
-    RandomForestClassifier, GradientBoostingClassifier, 
+    RandomForestClassifier, GradientBoostingClassifier,
     AdaBoostClassifier, StackingClassifier
 )
 from sklearn.linear_model import LogisticRegression
@@ -364,6 +369,7 @@ class DropoutPredictor:
             })
             
             return importance_df
+
             
         # Для линейных моделей можно использовать коэффициенты
         elif hasattr(self.model, 'coef_'):
@@ -381,6 +387,64 @@ class DropoutPredictor:
         else:
             logger.warning(f"Модель {self.model_name} не поддерживает получение важности признаков")
             return None
+
+
+    def visualize_all(self, X: np.ndarray, y: np.ndarray, feature_names: List[str]) -> None:
+        """
+        Визуализация основных метрик и результатов модели.
+
+        Args:
+            X: Признаки для визуализации (например, тестовые данные)
+            y: Истинные метки
+            feature_names: Имена признаков
+        """
+        if self.model is None:
+            raise ValueError("Модель не обучена или не загружена")
+
+        # Визуализация важности признаков
+        importance_df = self.get_feature_importances(feature_names)
+        if importance_df is not None:
+            plt.figure(figsize=(10, 6))
+            col = 'importance' if 'importance' in importance_df.columns else 'coefficient'
+            sns.barplot(data=importance_df, x=col, y='feature')
+            plt.title("Важность признаков")
+            plt.xlabel("Значимость")
+            plt.ylabel("Признак")
+            plt.tight_layout()
+            plt.show()
+        else:
+            print("Важность признаков недоступна для текущей модели.")
+
+        # Матрица ошибок
+        y_pred = self.model.predict(X)
+        ConfusionMatrixDisplay.from_predictions(y, y_pred)
+        plt.title("Матрица ошибок")
+        plt.show()
+
+        # ROC-кривая (если возможно)
+        if hasattr(self.model, "predict_proba"):
+            y_prob = self.model.predict_proba(X)[:, 1]
+            fpr, tpr, _ = roc_curve(y, y_prob)
+            roc_auc = auc(fpr, tpr)
+            plt.figure()
+            plt.plot(fpr, tpr, label=f"ROC-кривая (AUC = {roc_auc:.2f})")
+            plt.plot([0, 1], [0, 1], "k--", label="Случайная модель")
+            plt.xlabel("False Positive Rate")
+            plt.ylabel("True Positive Rate")
+            plt.title("ROC-кривая")
+            plt.legend(loc="lower right")
+            plt.grid(True)
+            plt.show()
+        else:
+            print("ROC-кривая недоступна, так как модель не поддерживает predict_proba.")
+
+        # Кросс-валидация точности
+        cv_scores = cross_val_score(self.model, X, y, cv=5, scoring='accuracy', n_jobs=-1)
+        plt.figure(figsize=(6, 4))
+        sns.boxplot(data=cv_scores)
+        plt.title("Кросс-валидация: Точность (Accuracy)")
+        plt.ylabel("Accuracy")
+        plt.show()
 
 
 if __name__ == "__main__":
@@ -415,4 +479,4 @@ if __name__ == "__main__":
     predictions, probabilities = new_predictor.predict(X[:5])
     print("Предсказания:", predictions)
     if probabilities is not None:
-        print("Вероятности:", probabilities) 
+        print("Вероятности:", probabilities)
